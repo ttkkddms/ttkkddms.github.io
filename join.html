@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./join.css">
+    <script src="https://kit.fontawesome.com/483f563228.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <form class="container">
+
+        <div class="join">
+            <div class="join__form">
+                <div class="join__info">
+                    <label for="id">아이디 </label>
+                    <input type="text" id="id" required>
+                    <input type="button" value="중복확인" class="btn">
+                </div>
+                <div class="join__info">
+                    <label for="pw">비밀번호 </label>
+                    <input id="pw" required>
+                </div>
+                <div class="join__info">
+                    <label for="pwc">비밀번호확인 </label>
+                    <input id="pwc" required>
+                </div>
+                <div class="join__info">
+                    <label for="customer_name">이름 </label>
+                    <input id="customer_name" required>
+                </div>
+                <div class="join__info">
+                    <label for="birth-date">생년월일</label>
+                    <input type="date" id="birth-date">
+                </div>
+                <div class="join__info">
+                    <label for="phone_number">전화번호 </label>
+                    <input type="tel" id="phone_number" placeholder="전화번호를 입력해 주세요.">
+                </div>
+                <div class="join__info">
+                    <label for="email_address">이메일 </label>
+                    <input type="email" id="email_address" placeholder="이메일을 입력해 주세요.">
+                    <p>@</p>
+                    <input type="text" id="domain-txt">
+                    <select class="box" id="domain-list">
+                        <option value="type">직접 입력</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="google.com">gmail.com</option>
+                        <option value="hanmail.net">hanmail.net</option>
+                    </select>
+                    <input type="button" value="인증번호 전송" class="btn">
+                </div>
+                <div class="join__info">
+                    <label for="email_check">인증번호 </label>
+                    <input type="email" id="email_check">
+                    <input type="button" value="인증번호 확인" class="btn">
+                </div>
+
+                <div class="join__info">
+                    <label for="ename">닉네임 </label>
+                    <input id="ename" id="ename_check" required>
+                    <input type="button" value="중복확인" class="btn">
+                </div>
+                <div class="join__info">
+                    <button class="join__btn">가입하기</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            const domainListEl = document.getElementById('domain-list');
+            const domainInputEl = document.getElementById('domain-txt');
+
+            domainListEl.addEventListener('change',(event) =>{
+                if(event.target.value !== "type"){
+                    domainInputEl.value = event.target.value
+                    domainInputEl.disabled = true
+                } else {
+                    domainInputEl.value = ""
+                    domainInputEl.disabled = false
+                }
+            })
+
+        </script>
+
+
+
+
+
+        </div>
+</body>
+
+</html>
